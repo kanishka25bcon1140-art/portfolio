@@ -3,7 +3,7 @@
 A modern, responsive personal portfolio website showcasing my profile, educational background, technical skills, and development projects. It includes interactive features such as project search, dark/light mode, and an API-integrated chatbot.
 
 ## 🚀 Live Demo
-[View My Portfolio](ADD_YOUR_VERCEL_LINK)
+[View My Portfolio]https://vercel.com/kanishkag525-4603s-projects/portfolio/5V81BeL8g5kiKjUih26LDpiuU6FG
 
 ## 👩‍💻 About Me
 
