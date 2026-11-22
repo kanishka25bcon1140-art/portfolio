@@ -1,0 +1,207 @@
+.ai-chat {
+  max-width: 720px;
+  margin: 32px 0;
+  padding: 24px;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  background: #fdfdfd;
+  color: #111111;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+/* Suggestion chips */
+.chat-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 6px;
+}
+
+.suggestion-chip {
+  min-height: auto;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 20px;
+  background: #f1f3f5;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  cursor: pointer;
+  text-transform: none;
+  letter-spacing: normal;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.suggestion-chip:hover {
+  background: var(--red, #e31820);
+  color: #ffffff;
+  border-color: var(--red, #e31820);
+  transform: translateY(-1px);
+}
+
+#chatMessages {
+  height: 280px;
+  overflow-y: auto;
+  background: #ffffff;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  margin: 16px 0;
+  scroll-behavior: smooth;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.chat-message {
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  max-width: 88%;
+  animation: fadeInMessage 0.2s ease-in-out;
+}
+
+.chat-message code {
+  background: rgba(0, 0, 0, 0.08);
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: Consolas, monospace;
+  font-size: 0.88em;
+}
+
+.chat-message strong {
+  font-weight: 700;
+}
+
+@keyframes fadeInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-user {
+  background: #e0e7ff;
+  color: #1e1b4b;
+  margin-left: auto;
+  text-align: left;
+  border-bottom-right-radius: 2px;
+}
+
+.chat-assistant {
+  background: #f1f3f5;
+  color: #1f2937;
+  margin-right: auto;
+  border-bottom-left-radius: 2px;
+}
+
+/* Typing Indicator Animation */
+.chat-typing {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 18px;
+}
+
+.typing-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #6b7280;
+  display: inline-block;
+  animation: typingBounce 1.4s infinite ease-in-out both;
+}
+
+.typing-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0s;
+}
+
+@keyframes typingBounce {
+  0%, 80%, 100% {
+    transform: scale(0.4);
+    opacity: 0.4;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.chat-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#userInput {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px 14px;
+  border: 1px solid #bdbdbd;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+#sendButton {
+  padding: 11px 24px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+#sendButton:disabled,
+#userInput:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#chatStatus {
+  min-height: 1.2rem;
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.chat-note {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Dark Mode Extensions for Chat */
+body.dark-mode .suggestion-chip {
+  background: #252833;
+  color: #e4e7ec;
+  border-color: #383c4c;
+}
+
+body.dark-mode .suggestion-chip:hover {
+  background: var(--red, #e31820);
+  color: #ffffff;
+  border-color: var(--red, #e31820);
+}
+
+body.dark-mode .chat-message code {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ff8a8e;
+}
+
+body.dark-mode .typing-dot {
+  background-color: #9da3af;
+}
